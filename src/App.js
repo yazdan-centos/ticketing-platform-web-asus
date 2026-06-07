@@ -3,6 +3,9 @@ import { BrowserRouter, Routes, Route, Navigate, useLocation } from 'react-route
 import { useAuth, AuthProvider } from './context/AuthProvider';
 import Layout from './layout/Layout';
 import Login from './pages/Login';
+import CustomerList from './pages/CustomerList';
+import CreateCustomer from './pages/CreateCustomer';
+import UpdateCustomer from './pages/UpdateCustomer';
 
 
 // Mock Page Components for demonstration
@@ -31,6 +34,7 @@ function App() {
         <Routes>
           {/* Public Route: Login does not use Layout */}
           <Route path="/login" element={<Login />} />
+          <Route path="/analytics" element={<CustomerList />} />
 
           {/* Protected Routes: Layout and children are wrapped by ProtectedRoute */}
           <Route 
@@ -43,7 +47,10 @@ function App() {
           >
             {/* index renders at the base path "/" */}
             <Route index element={<Dashboard />} />
-            <Route path="analytics" element={<Analytics />} />
+            <Route path="customers" element={<CustomerList />} />
+            <Route path="customers/create" element={<CreateCustomer />} />
+            <Route path="customers/:id/edit" element={<UpdateCustomer />} />
+            
             <Route path="settings" element={<Settings />} />
             <Route path="help" element={<Help />} />
           </Route>
@@ -57,4 +64,3 @@ function App() {
 }
 
 export default App;
-

@@ -31,7 +31,7 @@ const Layout = () => {
             <NavLink to="/" end className="sidebar-link" onClick={closeSidebar}>
               📊 Dashboard
             </NavLink>
-            <NavLink to="/analytics" className="sidebar-link" onClick={closeSidebar}>
+            <NavLink to="/customers" className="sidebar-link" onClick={closeSidebar}>
               📈 Analytics
             </NavLink>
             <NavLink to="/settings" className="sidebar-link" onClick={closeSidebar}>
